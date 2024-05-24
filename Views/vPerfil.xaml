@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.vPerfil"
+               xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             >
+        <Grid RowDefinitions=".2*,.5*">
+        <Image Aspect="Fill" Source="soccer.jpg" />
+        <Grid BackgroundColor="GreenYellow" Opacity=".4"/>
+        <Grid ColumnDefinitions="*,*" >
+            <Image Aspect="AspectFit"
+           HeightRequest="150"
+           Source="futbol.png" />
+            <skia:SKLottieView Grid.Column="1"
+                       HeightRequest="150"
+                       RepeatCount="-1"
+                       Source="calendarb.json"/>
+        </Grid>
+            <Grid Grid.Row="1">
+                <RoundRectangle
+                    Margin="-5,-30,-5,-2"
+                    CornerRadius="30,30,0,0"
+                    Fill="White"/>
+                <VerticalStackLayout Margin="30,0,30,0">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="bold"
+                        FontSize="Medium"
+                        Text="PERFIL USUARIO"
+                        TextColor="#2D2D2D" 
+                        HorizontalOptions="Center"/>
+
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label 
+                            x:Name="lblNombre"
+                            Grid.Column="1"
+                            Text="Bienvenido !! ⚽"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalOptions="Center">
+                        </Label>
+
+                    </Grid>
+                   
+
+                  
+
+                    <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                        <Button
+                        x:Name="btnUbicacion"
+                        BackgroundColor="SeaGreen"
+                        HeightRequest="40"
+                        Text="Cómo llegar"
+                        Clicked="btnUbicacion_Clicked"  
+                        WidthRequest="150"/>
+                    </Grid>
+                    <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                        <Button
+                         x:Name="btnReservar"
+                         BackgroundColor="SeaGreen"
+                         HeightRequest="40"
+                         Text="Reservar"
+                         Clicked="btnReservar_Clicked"
+                         WidthRequest="150"/>
+                    </Grid>
+                    <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                        <Button
+                        x:Name="btnConsultarReserva"
+                        BackgroundColor="SeaGreen"
+                        HeightRequest="40"
+                        Text="Mis reservas"
+                        Clicked="btnConsultarReserva_Clicked"       
+                        WidthRequest="150"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+</ContentPage>

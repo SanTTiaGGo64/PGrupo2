@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.vPago"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
+    <Grid RowDefinitions=".2*,.5*">
+        <Image Aspect="Fill" Source="soccer.jpg" />
+        <Grid BackgroundColor="GreenYellow" Opacity=".4"/>
+        <Grid ColumnDefinitions="*,*" >
+            <Image Aspect="AspectFit"
+           HeightRequest="150"
+           Source="futbol.png" />
+            <skia:SKLottieView Grid.Column="1"
+                       HeightRequest="150"
+                       RepeatCount="-1"
+                       Source="calendarb.json"/>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <RoundRectangle
+                Margin="-5,-30,-5,-2"
+                CornerRadius="30,30,0,0"
+                Fill="White" />
+            <VerticalStackLayout Margin="30,0,30,0" >
+                <Label
+                FontAttributes="Bold"
+                FontFamily="bold"
+                FontSize="Medium"
+                Text="Método de Pago"
+                TextColor="#2D2D2D" 
+            HorizontalTextAlignment="Center"/>
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Monto total"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="18"
+                           Grid.Column="0"
+                           Grid.Row="0"/>
+                    <Entry x:Name="txtMontoTotal"
+                           IsReadOnly="True"
+                           Grid.Row="0"
+                           Grid.Column="1"/>
+                    
+                    <Label Text="Monto Abono"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="18"
+                           Grid.Column="0"
+                           Grid.Row="1"/>
+                    <Entry x:Name="txtMontoCancelado"
+                           Placeholder="0"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Keyboard="Numeric"
+                           TextChanged="txtMontoCancelado_TextChanged"/>
+                    <Label Text="Monto Restante"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                            FontSize="18"
+                            Grid.Row="2"
+                            Grid.Column="0"/>
+                    <Entry x:Name="txtMontoRestante"
+                            Placeholder="Restante"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            IsReadOnly="True"/>
+
+                    <Label Text="Método de Pago"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                            FontSize="18"
+                            Grid.Row="3"
+                            Grid.Column="0"/>
+
+                    <Picker x:Name="pkMetodoPago"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>Efectivo</x:String>
+                            <x:String>Transferencia</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+                <Button x:Name="btnPagar"
+                         Text="Pagar"
+                         Clicked="btnPagar_Clicked"
+                        BackgroundColor="SeaGreen"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

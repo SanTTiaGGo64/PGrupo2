@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.Registro"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="Registro"
+             NavigationPage.HasNavigationBar="False">
+    
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="Fill" Source="soccer.jpg" />
+        <Grid BackgroundColor="GreenYellow" Opacity=".4"/>
+        <Grid ColumnDefinitions="*,*" >
+            <Image Aspect="AspectFit"
+                   HeightRequest="150"
+                   Source="futbol.png" />
+            <skia:SKLottieView Grid.Column="1"
+                               HeightRequest="150"
+                               RepeatCount="-1"
+                               Source="calendarb.json"/>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <RoundRectangle
+                Margin="-5,-30,-5,-2"
+                CornerRadius="30,30,0,0"
+                Fill="White" />
+            <VerticalStackLayout Margin="30,0,30,0" >
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="bold"
+                    FontSize="Medium"
+                    Text="Regístrate!"
+                    TextColor="#2D2D2D" 
+                    HorizontalTextAlignment="Center"/>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*" >
+                    <Label  
+                        Text="Nombre"
+                        FontSize="20"
+                        Grid.Column="0" />
+                    
+                    <Entry x:Name="txtNombre"
+                        Grid.Column="1"
+                        Placeholder="Nombre"
+                        VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*" >
+                    
+                    <Label  
+                        Text="Apellido"
+                        FontSize="20"
+                        Grid.Column="0" />
+                    
+                    <Entry x:Name="txtApellido"
+                        Grid.Column="1"
+                        Placeholder="Apellido"
+                        VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*" >
+                    <Label  
+                        Text="Correo"
+                        FontSize="20"
+                        Grid.Column="0" />
+                    
+                    <Entry x:Name="txtCorreo"
+                        Grid.Column="1"
+                        Placeholder="Correo"
+                        VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*" >
+                    <Label  
+                        Text="Contraseña"
+                        FontSize="20"
+                        Grid.Column="0" />
+                    
+                    <Entry x:Name="txtPassword"
+                        Grid.Column="1"
+                        Placeholder="Contraseña"
+                        IsPassword="True"
+                        VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*" >
+                    <Label  
+                        Text="Teléfono"
+                        FontSize="20"
+                        Grid.Column="0" />
+                    
+                    <Entry x:Name="txtCelular"
+                        Grid.Column="1"
+                        Placeholder="Teléfono"
+                        VerticalOptions="Center"/>
+                </Grid>
+
+                <Button x:Name="btnGuardar"
+                        Margin="0,20,0,0"
+                        BackgroundColor="SeaGreen"
+                        HeightRequest="60"
+                        Text="Crear Cuenta"
+                        TextColor="#FBF6FD"
+                        Clicked="btnGuardar_Clicked"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

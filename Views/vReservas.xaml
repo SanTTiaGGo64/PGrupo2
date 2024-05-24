@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.vReservas"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
+        <Grid RowDefinitions=".3*,.7*">
+            <Image Aspect="Fill" Source="soccer.jpg" />
+            <Grid BackgroundColor="GreenYellow" Opacity=".4"/>
+            <Grid ColumnDefinitions="*,*" >
+                <Image Aspect="AspectFit"
+                       HeightRequest="150"
+                       Source="futbol.png" />
+                <skia:SKLottieView Grid.Column="1"
+               HeightRequest="150"
+               RepeatCount="-1"
+               Source="calendarb.json"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <RoundRectangle
+                    Margin="-5,-30,-5,-2"
+                    CornerRadius="30,30,0,0"
+                    Fill="White"/>
+                <VerticalStackLayout Margin="30,0,30,0">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="bold"
+                        FontSize="Medium"
+                        Text="REALIZAR RESERVA"
+                        TextColor="#2D2D2D" 
+                        HorizontalOptions="Center"/>
+
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button
+                             x:Name="btnCancha"
+                             Grid.Column="0"                            
+                             BackgroundColor="Goldenrod"
+                             Text="Consultar Cancha"
+                             Clicked="btnCancha_Clicked"
+                             TextColor="#FBF6FD" 
+                            FontSize="12"
+                            Padding="10"
+                            WidthRequest="150"/>
+                        <Label 
+                            x:Name="lblIdCancha"
+                            Grid.Column="1" 
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalOptions="Center">
+                        </Label>
+
+                    </Grid>
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                               Text="Fecha Reserva"
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               VerticalTextAlignment="Center"
+                               HorizontalOptions="Start">
+                        </Label>
+                        <DatePicker
+                            x:Name="pckFechaReserva"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            TextColor="Black"
+                            HorizontalOptions="Center"/>
+                    </Grid>
+
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                           Text="Hora inicio"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalOptions="Start"/>
+                        <Picker
+                            x:Name="pckEntrada"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center" >
+                        </Picker>
+                    </Grid>
+
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                            Text="Hora fin"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="Start"/>
+                        <Picker
+                            x:Name="pckSalida"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center" >
+                        </Picker>
+                    </Grid>
+
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                            Text="Precio"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="Start"/>
+                        <Label 
+                            x:Name="lblPrecio"
+                            Grid.Column="1" 
+                            Text="Precio"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="Center"/>
+                    </Grid>
+
+                    <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                        <Button
+                        x:Name="btnReservar"
+                        BackgroundColor="SeaGreen"
+                        HeightRequest="40"
+                        Text="Reservar"
+                        Clicked="btnReservar_Clicked"
+                        WidthRequest="150"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+</ContentPage>

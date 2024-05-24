@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.vGestionReserva"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             >
+    <Grid RowDefinitions=".2*,.5*">
+        <Image Aspect="Fill" Source="soccer.jpg" />
+        <Grid BackgroundColor="GreenYellow" Opacity=".8"/>
+        <Grid ColumnDefinitions="*,*" >
+            <Image Aspect="AspectFit"
+           HeightRequest="120"
+           Source="futbol.png" />
+            <skia:SKLottieView Grid.Column="1"
+                       HeightRequest="100"
+                       RepeatCount="-1"
+                       Source="calendarb.json"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <RoundRectangle
+                    Margin="-5,-30,-5,-2"
+                    CornerRadius="30,30,0,0"
+                    Fill="White"/>
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label
+                        FontAttributes="Bold"
+                        FontFamily="bold"
+                        FontSize="Medium"
+                        Text="Gestión Reserva"
+                        TextColor="#2D2D2D" 
+                        HorizontalOptions="Center"/>
+
+                <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                    <Picker x:Name="pckReservas"
+                            SelectedIndexChanged="pckReservas_SelectedIndexChanged"
+                            TextColor="Black"/>
+                    
+                    
+                </Grid>
+                
+                    <Grid Margin="0,15,0,0" ColumnDefinitions="*,*">
+                        <Label Text="Fecha de reserva:"
+                               
+                        TextColor="Black"
+                        Grid.Column="0"/>
+                        <DatePicker x:Name="dtFecha"
+           TextColor="Black"
+           Grid.Column="1"/>
+                       
+                    </Grid>
+
+
+                
+                
+                    <Grid Margin="0,15,0,0" ColumnDefinitions="*,*">
+                        <Label Text="Hora de entrada:"
+                        TextColor="Black"
+                       Grid.Column="0"/>
+                        <Entry x:Name="txtHoraEntrada"
+                            TextColor="Black"
+                       Grid.Column="1"/>
+                       
+                    </Grid>
+
+                
+                <Grid Margin="0,15,0,0" ColumnDefinitions="*,*">
+                    <Label Text="Hora de salida:"
+                    TextColor="Black"
+                     Grid.Column="0"/>
+                    <Entry x:Name="txtHoraSalida"
+           TextColor="Black"
+           Grid.Column="1"/>
+                   
+                </Grid>
+
+
+                <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                    <Button
+                         x:Name="btnGuardar"
+                         BackgroundColor="SeaGreen"
+                         HeightRequest="40"
+                         Text="Guardar Cambios"
+                         Clicked="btnGuardar_Clicked"
+                         WidthRequest="150"/>
+                </Grid>
+                <Grid Margin="0,15,0,0" ColumnDefinitions="4*">
+                    <Button
+                        x:Name="btnEliminarReserva"
+                        BackgroundColor="SeaGreen"
+                        HeightRequest="40"
+                        Text="Eliminar reserva"
+                        Clicked="btnEliminarReserva_Clicked"          
+                        WidthRequest="150"/>
+                </Grid>
+
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

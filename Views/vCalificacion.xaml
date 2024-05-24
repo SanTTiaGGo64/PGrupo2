@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.vCalificacion"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="Fill" Source="soccer.jpg" />
+        <Grid BackgroundColor="GreenYellow" Opacity=".4"/>
+        <Grid ColumnDefinitions="*,*" >
+            <Image Aspect="AspectFit"
+               HeightRequest="150"
+               Source="futbol.png" />
+            <skia:SKLottieView Grid.Column="1"
+                           HeightRequest="150"
+                           RepeatCount="-1"
+                           Source="calendarb.json"/>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <RoundRectangle
+        Margin="-5,-30,-5,-2"
+        CornerRadius="30,30,0,0"
+        Fill="White" />
+            <VerticalStackLayout Margin="30,0,30,0" >
+                <Label
+            FontAttributes="Bold"
+            FontFamily="bold"
+            FontSize="Medium"
+            Text="Califica nuestro sistema!"
+            TextColor="#2D2D2D" 
+                    HorizontalTextAlignment="Center"/>
+
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Tu opinión"
+                       FontSize="20"
+                       VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="0"/>
+                    <Label Text="es importante"
+                       FontSize="20"
+                       VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="1"/>
+                    <Label Text="nos ayuda"
+                       FontSize="20"
+                       VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="2"/>
+                    <Label Text="a mejorar"
+                       FontSize="20"
+                       VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Grid.Column="0"
+                           Grid.Row="3"/>
+                    <RadioButton Grid.Row="0" Grid.Column="1" x:Name="radioButton1" Content="1" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Grid.Row="1" Grid.Column="1" x:Name="radioButton2" Content="2" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Grid.Row="2" Grid.Column="1" x:Name="radioButton3" Content="3" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Grid.Row="3" Grid.Column="1" x:Name="radioButton4" Content="4" CheckedChanged="RadioButton_CheckedChanged"/>
+                    <RadioButton Grid.Row="4" Grid.Column="1" x:Name="radioButton5" Content="5" CheckedChanged="RadioButton_CheckedChanged"/>
+
+                    <Label Text="Déjanos un comentario"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Grid.Row="5"
+                            Grid.Column="0"/>
+                    <Entry x:Name="txtComentario"
+                       MaxLength="200"
+                       Grid.Row="5"
+                       Grid.Column="1"/>
+                </Grid>
+                <Button x:Name="btnGuardar" Text="Guardar"  BackgroundColor="SeaGreen" Clicked="btnGuardar_Clicked" Margin="0,20,0,0"/>
+                
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

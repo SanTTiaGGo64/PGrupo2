@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pryReservas.Views.vCancha"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI">
+        <Grid RowDefinitions=".2*,.5*">
+            <Image Aspect="Fill" Source="soccer.jpg" />
+            <Grid BackgroundColor="GreenYellow" Opacity=".4"/>
+            <Grid ColumnDefinitions="*,*" >
+                <Image Aspect="AspectFit"
+                        HeightRequest="150"
+                        Source="futbol.png" />
+                <skia:SKLottieView Grid.Column="1"
+                        HeightRequest="150"
+                        RepeatCount="-1"
+                        Source="calendarb.json"/>
+        </Grid>
+            <Grid Grid.Row="1">
+                <RoundRectangle
+                    Margin="-5,-30,-5,-2"
+                    CornerRadius="30,30,0,0"
+                    Fill="White"/>
+                <VerticalStackLayout Margin="30,0,30,0">
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="bold"
+                        FontSize="Medium"
+                        Text="ESCOGER CANCHA"
+                        TextColor="#2D2D2D" 
+                        HorizontalOptions="Center"/>
+
+                    <Grid Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                           Text="Seleccionar Cancha:"
+                           TextColor="Black"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalOptions="Start"/>
+                        <Picker
+                            SelectedIndexChanged="pckCancha_SelectedIndexChanged"
+                            x:Name="pckCancha"
+                            Grid.Column="1"
+                            VerticalOptions="Center"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"
+                            SelectedItem="">
+                        </Picker>
+                    </Grid>
+
+                    <Grid Margin="0,15,0,0">
+                        <Image
+                            x:Name="imgCancha"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFit"
+                           />
+                    </Grid>
+
+                    <Grid Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                        Text="Tipo Cesped:"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Start"/>
+                        <Label Grid.Column="1" 
+                        x:Name="lblTipoCesped"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Grid Margin="0,30,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                        Text="Capacidad:"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Start"/>
+                       <Label Grid.Column="1" 
+                        x:Name="lblCapacidad"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Grid Margin="0,30,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" 
+                            Text="Precio:"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="Start"/>
+                        <Label Grid.Column="1" 
+                            x:Name="lblPrecio"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="Start"/>
+                    </Grid>
+
+                    <Grid Margin="0,30,0,0" ColumnDefinitions="4*">
+                        <Button
+                        x:Name="btnSeleccionar"
+                        BackgroundColor="SeaGreen"
+                        HeightRequest="40"
+                        Text="Seleccionar"
+                        Clicked="btnSeleccionar_Clicked"
+                        WidthRequest="150"/>
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+</ContentPage>
